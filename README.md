@@ -9,7 +9,7 @@ Gmsh is used for create a mesh data of object.
 
 ## Usage of example code  
 
-1. type 'make' command to compile  
+1. type 'make' command to compile.  
    The executable d2te_bv_solver, example1.out, example2.out, example3.out are created. 
    The executable d2te_bv_solver is the main solver of the boundary integral equations. 
    The example1.out is the executable of source code example1.c, it shows a simplest example using "bem2_emf_te". 
@@ -35,7 +35,7 @@ Gmsh is used for create a mesh data of object.
 4. type './example2.out' with an argument of datafile name output by d2te_bv_solver.  
    For example, './example2.out ex.dat'. 
    This executable calculates electromagnetic field intensity distributions, outputs them to text files. 
-   The I_example2.png is the visualization result of intensity distributions, created by Gnuplot script gscript_example2.plt.  
+   The I_example2.png is the visualization result of intensity distributions, created by using Gnuplot script gscript_example2.plt.  
 
 5. type './example3.out' with an argument of datafile name output by d2te_bv_solver.  
    For example, './example3.out ex.dat'. 
@@ -49,7 +49,7 @@ Gmsh is used for create a mesh data of object.
 Please see d2te_src/bem2_emf_te.h for detail of functions. 
 The main parts of the code are parallelized by using OpenMP. 
 The number of threads is controlled by the environment variable OMP_NUM_THREADS. 
-The additional analysis examples are in the folder analysis_sample1 ~ analysis_sample4.
+The additional analysis examples are in the folder analysis_sample1 ~ analysis_sample4.  
 
 ![intensity distributions](I_example2.png "intensity distributions (I_example2.png)")  
 ![model particles](particles.png "image of the object (particles.png)")![Ez gif](xy_Ez.gif "instantaneous value of the E_z (xy_Ez.gif)")  
