@@ -20,7 +20,7 @@ Gmsh is used for create a mesh data of object.
    For example, './d2te_bv_solver ifd.txt medium_data.txt circle_1.msh ex.dat'. 
    The ifd.txt is the sample of incident field datafile, a TE plane wave is defined in it.
    The medium_data.txt is the sample of medium datafile, one medium is defined in it. The domain numbers are assigned to the medium from 1 in order. 
-   The circle_1.msh is the example of mesh datafile, it is an object with a circular cross sectios. 
+   The circle_1.msh is the example of mesh datafile, it is an object with a circular cross section. 
    It was created by using Gmsh geometry file circle_1.geo in the mesh_sample folder. 
    The d2te_bv_solver solves boundary integral equations with the specified datafiles, outputs the results to a binary file with the output datafile name. 
    It has optional arguments for rotation and translation of the object.
