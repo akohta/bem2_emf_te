@@ -63,6 +63,34 @@ The additional analysis examples are in the folder analysis_sample1 ~ analysis_s
 ![Hx_gif 3](analysis_sample3/xy_Hx.gif "instantaneous value of the H_x (analysis_sample3/xy_Hx.gif)")![Hy gif 3](analysis_sample3/xy_Hy.gif "instantaneous value of the H_y (analysis_sample3/xy_Hy.gif)")  
 
 
+## About mesh file
+
+This program can use parabolic (three-node second order line) element. 
+The samples of mesh data are in the folder mesh_sample. 
+The file with extension .geo is the Gmsh geometry file. 
+The file with extension .msh is the mesh datafile created by using Gmsh geometry file. 
+These mesh files are created by the command 'gmsh -1 -order 2 -tol 1.0e-15 xxxx.geo' in command-line (xxxx.geo is a geometry file). 
+The domain number (Physical Line) 99 is assigned to the open region in Gmsh geometry file, because Gmsh can't use the number 0 (assigned to open region in the code). 
+Please refer to the manual of Gmsh for detail of geometry file.  
+
+
+## System of units  
+
+This program use the own defined system of units (OSU), optimized for optics. 
+The system of units is defined as <img src="https://latex.codecogs.com/gif.latex?c_0=1"> ( speed of light in vacuum ), 
+<img src="https://latex.codecogs.com/gif.latex?\mu_0=1"> ( permeability of vacuum ). 
+For the conversion from OSU to MKSA system of units, the unit of length in OSU is defined as 
+<img src="https://latex.codecogs.com/gif.latex?1\times10^{-6}"> [m] in MKSA, the unit of power in OSU is defined as
+<img src="https://latex.codecogs.com/gif.latex?1\times10^{-3}"> [W] in MKSA. The conversions of base unit are follows.  
+<img src="https://latex.codecogs.com/gif.latex?a=1\times10^{-6}">,  
+<img src="https://latex.codecogs.com/gif.latex?b=1\times10^{-3}">,  
+<img src="https://latex.codecogs.com/gif.latex?a\,\mathrm{[m]}=1\,\mathrm{[L]}">,  
+<img src="https://latex.codecogs.com/gif.latex?\frac{ab}{c_0^3}\,\mathrm{[kg]}=1\,\mathrm{[M]}">,  
+<img src="https://latex.codecogs.com/gif.latex?\frac{a}{c_0}\,\mathrm{[s]}=1\,\mathrm{[T]}">,  
+<img src="https://latex.codecogs.com/gif.latex?\sqrt{\frac{b}{c_0\mu_0}}\,\mathrm{[A]}=1\,\mathrm{[I]}">.  
+Please see com_src/osu_mksa.h and com_src/osu_mksa.c for detail of conversions.  
+
+
 ## References  
 
 1. Intel Math Kernel Library [MKL](https://software.intel.com/mkl)  
